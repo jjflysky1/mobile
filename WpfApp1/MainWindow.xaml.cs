@@ -26,34 +26,45 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public class checkedBoxIte
         {
-
+        
         }
-
-        public void data()
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
-                
-                SqlConnection thisConnection = new SqlConnection(@"Server=192.168.0.190; Database=mobile; User id=nms; Password=P@ssw0rd");
-                thisConnection.Open();
+                mobileEntities Con = new mobileEntities();
+                List<Product_sell> TableData = Con.Product_sell.ToList();
+                TableData.OrderBy(x => x.no);
+                TableData.Reverse();
+                datagrid1.ItemsSource = TableData;
 
-                string Get_Data = "SELECT * FROM product_sell";
-
-                SqlCommand cmd = thisConnection.CreateCommand();
-                cmd.CommandText = Get_Data;
-
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable("emp");
-                sda.Fill(dt);
-
-                datagrid1.ItemsSource = dt.DefaultView;
+            
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("db error");
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+        public DataView GridData
+        {
+            get
+            {
+                DataSet ds = new DataSet("MyDataSet");
+
+                using (SqlConnection conn = new SqlConnection("Server=192.168.0.190; Database=mobile; User id=nms; Password=P@ssw0rd"))
+                {
+                    SqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select no,product,serial,indate,from_location,outdate,to_location, out_user from Product_sell";
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                }
+
+                return ds.Tables[0].DefaultView;
             }
         }
     }

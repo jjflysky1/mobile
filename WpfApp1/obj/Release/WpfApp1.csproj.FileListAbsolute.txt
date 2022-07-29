@@ -6,7 +6,6 @@ D:\c#\repos\mobile\WpfApp1\bin\Release\EntityFramework.SqlServer.dll
 D:\c#\repos\mobile\WpfApp1\bin\Release\EntityFramework.xml
 D:\c#\repos\mobile\WpfApp1\bin\Release\EntityFramework.SqlServer.xml
 D:\c#\repos\mobile\WpfApp1\bin\Release\ko\EntityFramework.resources.dll
-D:\c#\repos\mobile\WpfApp1\obj\Release\WpfApp1.csproj.AssemblyReference.cache
 D:\c#\repos\mobile\WpfApp1\obj\Release\WpfApp1.csproj.SuggestedBindingRedirects.cache
 D:\c#\repos\mobile\WpfApp1\obj\Release\MainWindow.g.cs
 D:\c#\repos\mobile\WpfApp1\obj\Release\App.g.cs

@@ -19,11 +19,8 @@ namespace WpfApp1
         public string serial { get; set; }
         public Nullable<System.DateTime> indate { get; set; }
         public Nullable<System.DateTime> outdate { get; set; }
-        public string up_user { get; set; }
-        public Nullable<int> qty { get; set; }
         public string out_user { get; set; }
         public string from_location { get; set; }
         public string to_location { get; set; }
-        public string modi_user { get; set; }
     }
 }

@@ -10,12 +10,9 @@
     <Property Name="serial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="indate" Type="DateTime" Precision="3" />
     <Property Name="outdate" Type="DateTime" Precision="3" />
-    <Property Name="up_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="qty" Type="Int32" />
     <Property Name="out_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="from_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="to_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="modi_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="mobileEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Product_sell" EntityType="Self.Product_sell" />
