@@ -1,0 +1,13 @@
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\obj\Debug\ConsoleApp2.csprojAssemblyReference.cache
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CopyComplete
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\MimeKit.dll
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\MimeKit.xml
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\OpenPop3Client.dll
+C:\Users\jjfly\source\repos\mobile\ConsoleApp2\bin\Debug\ImapX.dll

@@ -1,0 +1,6 @@
+D:\c#\repos\mobile\DBCON\bin\Release\DBCON.dll
+D:\c#\repos\mobile\DBCON\bin\Release\DBCON.pdb
+D:\c#\repos\mobile\DBCON\obj\Release\DBCON.csproj.AssemblyReference.cache
+D:\c#\repos\mobile\DBCON\obj\Release\DBCON.csproj.CoreCompileInputs.cache
+D:\c#\repos\mobile\DBCON\obj\Release\DBCON.dll
+D:\c#\repos\mobile\DBCON\obj\Release\DBCON.pdb

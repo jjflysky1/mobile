@@ -1,0 +1,8 @@
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\jjfly\source\repos\mobile\ConsoleApp1\bin\Debug\smtpop.dll

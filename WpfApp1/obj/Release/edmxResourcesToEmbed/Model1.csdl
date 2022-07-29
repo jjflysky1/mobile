@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mobileModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Product_sell">
+    <Key>
+      <PropertyRef Name="no" />
+      <PropertyRef Name="serial" />
+    </Key>
+    <Property Name="no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="serial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="indate" Type="DateTime" Precision="3" />
+    <Property Name="outdate" Type="DateTime" Precision="3" />
+    <Property Name="up_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="out_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="from_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="to_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="modi_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="mobileEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Product_sell" EntityType="Self.Product_sell" />
+  </EntityContainer>
+</Schema>

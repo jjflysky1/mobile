@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="token">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="potal_version_check">
+        <s:complexType />
+      </s:element>
+      <s:element name="potal_version_checkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="potal_version_checkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="barcode_version_check">
+        <s:complexType />
+      </s:element>
+      <s:element name="barcode_version_checkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode_version_checkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_getResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product_getResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_out">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to_location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="out_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_outResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product_outResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_check_tolocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromlocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="what" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_check_tolocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product_check_tolocationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_check">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromlocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="what" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product_checkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product_checkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="product">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="product" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromlocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="what" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="productResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="tokenSoapIn">
+    <wsdl:part name="parameters" element="tns:token" />
+  </wsdl:message>
+  <wsdl:message name="tokenSoapOut">
+    <wsdl:part name="parameters" element="tns:tokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="potal_version_checkSoapIn">
+    <wsdl:part name="parameters" element="tns:potal_version_check" />
+  </wsdl:message>
+  <wsdl:message name="potal_version_checkSoapOut">
+    <wsdl:part name="parameters" element="tns:potal_version_checkResponse" />
+  </wsdl:message>
+  <wsdl:message name="barcode_version_checkSoapIn">
+    <wsdl:part name="parameters" element="tns:barcode_version_check" />
+  </wsdl:message>
+  <wsdl:message name="barcode_version_checkSoapOut">
+    <wsdl:part name="parameters" element="tns:barcode_version_checkResponse" />
+  </wsdl:message>
+  <wsdl:message name="product_getSoapIn">
+    <wsdl:part name="parameters" element="tns:product_get" />
+  </wsdl:message>
+  <wsdl:message name="product_getSoapOut">
+    <wsdl:part name="parameters" element="tns:product_getResponse" />
+  </wsdl:message>
+  <wsdl:message name="product_outSoapIn">
+    <wsdl:part name="parameters" element="tns:product_out" />
+  </wsdl:message>
+  <wsdl:message name="product_outSoapOut">
+    <wsdl:part name="parameters" element="tns:product_outResponse" />
+  </wsdl:message>
+  <wsdl:message name="product_check_tolocationSoapIn">
+    <wsdl:part name="parameters" element="tns:product_check_tolocation" />
+  </wsdl:message>
+  <wsdl:message name="product_check_tolocationSoapOut">
+    <wsdl:part name="parameters" element="tns:product_check_tolocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="product_checkSoapIn">
+    <wsdl:part name="parameters" element="tns:product_check" />
+  </wsdl:message>
+  <wsdl:message name="product_checkSoapOut">
+    <wsdl:part name="parameters" element="tns:product_checkResponse" />
+  </wsdl:message>
+  <wsdl:message name="productSoapIn">
+    <wsdl:part name="parameters" element="tns:product" />
+  </wsdl:message>
+  <wsdl:message name="productSoapOut">
+    <wsdl:part name="parameters" element="tns:productResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginSoapIn">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="loginSoapOut">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="device_tokenSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="token">
+      <wsdl:input message="tns:tokenSoapIn" />
+      <wsdl:output message="tns:tokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="potal_version_check">
+      <wsdl:input message="tns:potal_version_checkSoapIn" />
+      <wsdl:output message="tns:potal_version_checkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="barcode_version_check">
+      <wsdl:input message="tns:barcode_version_checkSoapIn" />
+      <wsdl:output message="tns:barcode_version_checkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="product_get">
+      <wsdl:input message="tns:product_getSoapIn" />
+      <wsdl:output message="tns:product_getSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="product_out">
+      <wsdl:input message="tns:product_outSoapIn" />
+      <wsdl:output message="tns:product_outSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="product_check_tolocation">
+      <wsdl:input message="tns:product_check_tolocationSoapIn" />
+      <wsdl:output message="tns:product_check_tolocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="product_check">
+      <wsdl:input message="tns:product_checkSoapIn" />
+      <wsdl:output message="tns:product_checkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="product">
+      <wsdl:input message="tns:productSoapIn" />
+      <wsdl:output message="tns:productSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginSoapIn" />
+      <wsdl:output message="tns:loginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="device_tokenSoap" type="tns:device_tokenSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="token">
+      <soap:operation soapAction="http://tempuri.org/token" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="potal_version_check">
+      <soap:operation soapAction="http://tempuri.org/potal_version_check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="barcode_version_check">
+      <soap:operation soapAction="http://tempuri.org/barcode_version_check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_get">
+      <soap:operation soapAction="http://tempuri.org/product_get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_out">
+      <soap:operation soapAction="http://tempuri.org/product_out" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_check_tolocation">
+      <soap:operation soapAction="http://tempuri.org/product_check_tolocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_check">
+      <soap:operation soapAction="http://tempuri.org/product_check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product">
+      <soap:operation soapAction="http://tempuri.org/product" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="device_tokenSoap12" type="tns:device_tokenSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="token">
+      <soap12:operation soapAction="http://tempuri.org/token" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="potal_version_check">
+      <soap12:operation soapAction="http://tempuri.org/potal_version_check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="barcode_version_check">
+      <soap12:operation soapAction="http://tempuri.org/barcode_version_check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_get">
+      <soap12:operation soapAction="http://tempuri.org/product_get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_out">
+      <soap12:operation soapAction="http://tempuri.org/product_out" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_check_tolocation">
+      <soap12:operation soapAction="http://tempuri.org/product_check_tolocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_check">
+      <soap12:operation soapAction="http://tempuri.org/product_check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product">
+      <soap12:operation soapAction="http://tempuri.org/product" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="device_token">
+    <wsdl:port name="device_tokenSoap" binding="tns:device_tokenSoap">
+      <soap:address location="http://192.168.0.190:86/soap/device_token.asmx" />
+    </wsdl:port>
+    <wsdl:port name="device_tokenSoap12" binding="tns:device_tokenSoap12">
+      <soap12:address location="http://192.168.0.190:86/soap/device_token.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

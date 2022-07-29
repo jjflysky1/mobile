@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f4fe0bd9-0179-4aa9-a66b-a8eadb9ebf4c": {
+      "ProjectGuid": "f4fe0bd9-0179-4aa9-a66b-a8eadb9ebf4c",
+      "DisplayName": "ConsoleApp1",
+      "ColorIndex": 0
+    },
+    "fdd75089-21a6-4269-ae6d-c476eeb09ff1": {
+      "ProjectGuid": "fdd75089-21a6-4269-ae6d-c476eeb09ff1",
+      "DisplayName": "Console_Mail",
+      "ColorIndex": 1
+    },
+    "244fd0be-c4f2-479d-be42-9c6d92a91cf3": {
+      "ProjectGuid": "244fd0be-c4f2-479d-be42-9c6d92a91cf3",
+      "DisplayName": "DBCON",
+      "ColorIndex": 2
+    },
+    "3bc2677d-d810-47fe-8205-692173c02184": {
+      "ProjectGuid": "3bc2677d-d810-47fe-8205-692173c02184",
+      "DisplayName": "insert",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

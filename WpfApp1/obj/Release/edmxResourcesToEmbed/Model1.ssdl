@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mobileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'mobile.dbo.Product_sell'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+  <EntityType Name="Product_sell">
+    <Key>
+      <PropertyRef Name="no" />
+      <PropertyRef Name="serial" />
+    </Key>
+    <Property Name="no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product" Type="nvarchar" MaxLength="100" />
+    <Property Name="serial" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="indate" Type="datetime" />
+    <Property Name="outdate" Type="datetime" />
+    <Property Name="up_user" Type="nvarchar" MaxLength="50" />
+    <Property Name="qty" Type="int" />
+    <Property Name="out_user" Type="nvarchar" MaxLength="50" />
+    <Property Name="from_location" Type="nvarchar" MaxLength="100" />
+    <Property Name="to_location" Type="nvarchar" MaxLength="100" />
+    <Property Name="modi_user" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="mobileModelStoreContainer">
+    <EntitySet Name="Product_sell" EntityType="Self.Product_sell" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Product_sell].[no] AS [no], 
+    [Product_sell].[product] AS [product], 
+    [Product_sell].[serial] AS [serial], 
+    [Product_sell].[indate] AS [indate], 
+    [Product_sell].[outdate] AS [outdate], 
+    [Product_sell].[up_user] AS [up_user], 
+    [Product_sell].[qty] AS [qty], 
+    [Product_sell].[out_user] AS [out_user], 
+    [Product_sell].[from_location] AS [from_location], 
+    [Product_sell].[to_location] AS [to_location], 
+    [Product_sell].[modi_user] AS [modi_user]
+    FROM [dbo].[Product_sell] AS [Product_sell]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

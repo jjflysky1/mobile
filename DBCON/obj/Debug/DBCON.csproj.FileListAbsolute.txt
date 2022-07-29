@@ -1,0 +1,6 @@
+C:\Users\jjfly\source\repos\mobile\DBCON\bin\Debug\DBCON.dll
+C:\Users\jjfly\source\repos\mobile\DBCON\bin\Debug\DBCON.pdb
+C:\Users\jjfly\source\repos\mobile\DBCON\obj\Debug\DBCON.csprojAssemblyReference.cache
+C:\Users\jjfly\source\repos\mobile\DBCON\obj\Debug\DBCON.csproj.CoreCompileInputs.cache
+C:\Users\jjfly\source\repos\mobile\DBCON\obj\Debug\DBCON.dll
+C:\Users\jjfly\source\repos\mobile\DBCON\obj\Debug\DBCON.pdb

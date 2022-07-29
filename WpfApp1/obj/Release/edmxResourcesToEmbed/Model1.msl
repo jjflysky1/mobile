@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mobileModelStoreContainer" CdmEntityContainer="mobileEntities">
+    <EntitySetMapping Name="Product_sell">
+      <EntityTypeMapping TypeName="mobileModel.Product_sell">
+        <MappingFragment StoreEntitySet="Product_sell">
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="product" ColumnName="product" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="indate" ColumnName="indate" />
+          <ScalarProperty Name="outdate" ColumnName="outdate" />
+          <ScalarProperty Name="up_user" ColumnName="up_user" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="out_user" ColumnName="out_user" />
+          <ScalarProperty Name="from_location" ColumnName="from_location" />
+          <ScalarProperty Name="to_location" ColumnName="to_location" />
+          <ScalarProperty Name="modi_user" ColumnName="modi_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

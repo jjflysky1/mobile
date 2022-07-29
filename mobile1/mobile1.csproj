@@ -1,0 +1,442 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2C563604-F3AA-4654-84DD-2FC4CF77DFC3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mobile1</RootNamespace>
+    <AssemblyName>mobile1</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.1.18.1.1\lib\net40\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.1.18.1\lib\net40\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenPop, Version=2.0.6.1120, Culture=neutral, PublicKeyToken=6bdb97f144b7efc8, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenPop.NET.2.0.6.1120\lib\net40\OpenPop.dll</HintPath>
+    </Reference>
+    <Reference Include="smtpop">
+      <HintPath>.\smtpop.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Webservice_mail\mail.disco" />
+    <None Include="Connected Services\Webservice_mail\configuration91.svcinfo" />
+    <None Include="Connected Services\Webservice_mail\configuration.svcinfo" />
+    <None Include="Connected Services\Webservice_mail\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Insa\insa_detail.aspx" />
+    <Content Include="Insa\Insa_list_personal.aspx" />
+    <Content Include="Insa\Insa_list.aspx" />
+    <Content Include="mail\send_mail_list.aspx" />
+    <Content Include="mail\mail_list.aspx" />
+    <Content Include="mail\mail_list_get.aspx" />
+    <Content Include="mail\mail_view.aspx" />
+    <Content Include="mail\mail_write.aspx" />
+    <Content Include="Myinfo\myinfo.aspx" />
+    <Content Include="part\part_list.aspx" />
+    <Content Include="Product\Demo.aspx" />
+    <Content Include="Product\IN.aspx" />
+    <Content Include="Product\product_detail.aspx" />
+    <Content Include="Product\RMA.aspx" />
+    <Content Include="Product\Sell.aspx" />
+    <Content Include="schedule\schedule.aspx" />
+    <Content Include="Scripts\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Scripts\fullcalendar.min.css" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\fullcalendar.print.min.css" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Connected Services\Webservice_mail\mail.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\bottom.ascx" />
+    <Content Include="Common\leftmenu.ascx" />
+    <Content Include="Content\AdminLTE.min.css" />
+    <Content Include="Content\blue.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min2.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\JavaScript.js" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\_all-skins.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="main.aspx" />
+    <Content Include="notice\notice.aspx" />
+    <Content Include="notice\notice_writer.aspx" />
+    <Content Include="Scripts\AdminLTE.css" />
+    <Content Include="Scripts\adminlte.min.js" />
+    <Content Include="Scripts\Allcss.css" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.kr.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datepicker3.min.css" />
+    <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\export-data.js" />
+    <Content Include="Scripts\exporting.js" />
+    <Content Include="Scripts\highcharts-3d.js" />
+    <Content Include="Scripts\highcharts.js" />
+    <Content Include="Scripts\highmaps.js" />
+    <Content Include="Scripts\icheck.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.min2.js" />
+    <Content Include="Scripts\jschart.js" />
+    <Content Include="Scripts\kr-all.js" />
+    <Content Include="Scripts\leftmenu.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\morris.css" />
+    <Content Include="Scripts\morris.min.js" />
+    <Content Include="Scripts\password.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Raphael-min.js" />
+    <Content Include="soap\device_token.asmx" />
+    <Content Include="User\user_detail.aspx" />
+    <Content Include="User\user_list.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\bottom.ascx.cs">
+      <DependentUpon>bottom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\bottom.ascx.designer.cs">
+      <DependentUpon>bottom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\leftmenu.ascx.cs">
+      <DependentUpon>leftmenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\leftmenu.ascx.designer.cs">
+      <DependentUpon>leftmenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Webservice_mail\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FCM\FCMSEND.cs" />
+    <Compile Include="Insa\insa_detail.aspx.cs">
+      <DependentUpon>insa_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insa\insa_detail.aspx.designer.cs">
+      <DependentUpon>insa_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Insa\Insa_list_personal.aspx.cs">
+      <DependentUpon>Insa_list_personal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insa\Insa_list_personal.aspx.designer.cs">
+      <DependentUpon>Insa_list_personal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Insa\Insa_list.aspx.cs">
+      <DependentUpon>Insa_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insa\Insa_list.aspx.designer.cs">
+      <DependentUpon>Insa_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mail\send_mail_list.aspx.cs">
+      <DependentUpon>send_mail_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mail\send_mail_list.aspx.designer.cs">
+      <DependentUpon>send_mail_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mail\mail_list.aspx.cs">
+      <DependentUpon>mail_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mail\mail_list.aspx.designer.cs">
+      <DependentUpon>mail_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mail\mail_list_get.aspx.cs">
+      <DependentUpon>mail_list_get.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mail\mail_list_get.aspx.designer.cs">
+      <DependentUpon>mail_list_get.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mail\mail_view.aspx.cs">
+      <DependentUpon>mail_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mail\mail_view.aspx.designer.cs">
+      <DependentUpon>mail_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mail\mail_write.aspx.cs">
+      <DependentUpon>mail_write.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mail\mail_write.aspx.designer.cs">
+      <DependentUpon>mail_write.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Myinfo\myinfo.aspx.cs">
+      <DependentUpon>myinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Myinfo\myinfo.aspx.designer.cs">
+      <DependentUpon>myinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notice\notice.aspx.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notice\notice.aspx.designer.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notice\notice_writer.aspx.cs">
+      <DependentUpon>notice_writer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notice\notice_writer.aspx.designer.cs">
+      <DependentUpon>notice_writer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="part\part_list.aspx.cs">
+      <DependentUpon>part_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="part\part_list.aspx.designer.cs">
+      <DependentUpon>part_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Demo.aspx.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Demo.aspx.designer.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\IN.aspx.cs">
+      <DependentUpon>IN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\IN.aspx.designer.cs">
+      <DependentUpon>IN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\product_detail.aspx.cs">
+      <DependentUpon>product_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\product_detail.aspx.designer.cs">
+      <DependentUpon>product_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\RMA.aspx.cs">
+      <DependentUpon>RMA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\RMA.aspx.designer.cs">
+      <DependentUpon>RMA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Sell.aspx.cs">
+      <DependentUpon>Sell.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\Sell.aspx.designer.cs">
+      <DependentUpon>Sell.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="schedule\schedule.aspx.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="schedule\schedule.aspx.designer.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="soap\device_token.asmx.cs">
+      <DependentUpon>device_token.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="User\user_detail.aspx.cs">
+      <DependentUpon>user_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\user_detail.aspx.designer.cs">
+      <DependentUpon>user_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\user_list.aspx.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\user_list.aspx.designer.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Webservice_mail\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4509</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4509/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

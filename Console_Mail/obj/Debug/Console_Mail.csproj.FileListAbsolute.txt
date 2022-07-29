@@ -1,0 +1,10 @@
+C:\Users\jjfly\source\repos\mobile\Console_Mail\bin\Debug\Console_Mail.exe
+C:\Users\jjfly\source\repos\mobile\Console_Mail\bin\Debug\Console_Mail.pdb
+C:\Users\jjfly\source\repos\mobile\Console_Mail\bin\Debug\DBCON.dll
+C:\Users\jjfly\source\repos\mobile\Console_Mail\bin\Debug\OpenPop.dll
+C:\Users\jjfly\source\repos\mobile\Console_Mail\bin\Debug\DBCON.pdb
+C:\Users\jjfly\source\repos\mobile\Console_Mail\obj\Debug\Console_Mail.csprojAssemblyReference.cache
+C:\Users\jjfly\source\repos\mobile\Console_Mail\obj\Debug\Console_Mail.csproj.CoreCompileInputs.cache
+C:\Users\jjfly\source\repos\mobile\Console_Mail\obj\Debug\Console_Mail.csproj.CopyComplete
+C:\Users\jjfly\source\repos\mobile\Console_Mail\obj\Debug\Console_Mail.exe
+C:\Users\jjfly\source\repos\mobile\Console_Mail\obj\Debug\Console_Mail.pdb
