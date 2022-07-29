@@ -28,12 +28,14 @@ namespace WpfApp1
         }
         public class checkedBoxIte
         {
-        
+            public string MyString { get; set; }
+            public bool MyBool { get; set; }
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
+
                 mobileEntities Con = new mobileEntities();
                 List<Product_sell> TableData = Con.Product_sell.ToList();
                 TableData.OrderBy(x => x.no);
