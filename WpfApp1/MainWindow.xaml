@@ -5,11 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="MainWindow" Height="573" Width="1056" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid Name="datagrid1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,140,0"/>
-      
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="363*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="datagrid1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,216,0" Grid.ColumnSpan="2" MouseDoubleClick="datagrid1_MouseDoubleClick" SelectedCellsChanged="datagrid1_SelectedCellsChanged" AutoGeneratingColumn="datagrid1_AutoGeneratingColumn"/>
+        <Button Content="반  출" Margin="743,322,0,0" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="179" Click="Button_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF411BFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Calendar Name="calendar" Margin="734,6,10,0" VerticalAlignment="Top" Grid.Column="1" SelectedDatesChanged="Calendar_SelectedDatesChanged"/>
+        <TextBox Name="textbox1" Grid.Column="1" Margin="743,179,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="179"/>
+        <TextBox  Name="textbox2" Grid.Column="1" HorizontalAlignment="Left" Margin="743,408,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="20"/>
+        <Label Grid.Column="1" Content="반출처
+               " HorizontalAlignment="Left" Margin="743,204,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="textbox3" Grid.Column="1" HorizontalAlignment="Left" Margin="743,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"/>
+        <Label Grid.Column="1" Content="반출자" HorizontalAlignment="Left" Margin="743,260,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="textbox4" Grid.Column="1" HorizontalAlignment="Left" Margin="743,286,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"/>
+
+
+
 
 
 

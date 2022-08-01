@@ -20,3 +20,4 @@ D:\c#\repos\mobile\WpfApp1\obj\Release\WpfApp1.csproj.CoreCompileInputs.cache
 D:\c#\repos\mobile\WpfApp1\obj\Release\WpfApp1.csproj.CopyComplete
 D:\c#\repos\mobile\WpfApp1\obj\Release\WpfApp1.exe
 D:\c#\repos\mobile\WpfApp1\obj\Release\WpfApp1.pdb
+D:\c#\repos\mobile\WpfApp1\obj\Release\WpfApp1.csproj.AssemblyReference.cache

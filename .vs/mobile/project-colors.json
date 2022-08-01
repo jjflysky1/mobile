@@ -20,7 +20,22 @@
       "ProjectGuid": "3bc2677d-d810-47fe-8205-692173c02184",
       "DisplayName": "insert",
       "ColorIndex": 3
+    },
+    "046ad8c9-441b-432e-81fc-5f746a47bce4": {
+      "ProjectGuid": "046ad8c9-441b-432e-81fc-5f746a47bce4",
+      "DisplayName": "WpfApp1",
+      "ColorIndex": 4
+    },
+    "0cfa06e5-64d8-48b5-96e4-9447460c5667": {
+      "ProjectGuid": "0cfa06e5-64d8-48b5-96e4-9447460c5667",
+      "DisplayName": "WpfApp1",
+      "ColorIndex": 5
+    },
+    "f9ea599c-e778-4793-ad3c-46856693ec3c": {
+      "ProjectGuid": "f9ea599c-e778-4793-ad3c-46856693ec3c",
+      "DisplayName": "WpfApp1",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 7
 }

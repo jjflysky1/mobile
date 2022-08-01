@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -2336,7 +2337,7 @@ namespace insert
                     offsetx = (e.CellBounds.Width - nChkBoxWidth) / 2;
                     offsety = (e.CellBounds.Height - nChkBoxHeight) / 2;
                 }
-                //pt.X += 33; pt.Y += 3;
+                pt.X += 33; pt.Y += 3;
                 
                 CheckBox cb = new CheckBox();
                 cb.Size = new Size(nChkBoxWidth, nChkBoxHeight);
@@ -2407,6 +2408,18 @@ namespace insert
 
                 e.Handled = true;
             }
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
+                                                                Color.SteelBlue,
+                                                                Color.WhiteSmoke,                                               
+                                                               90F))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+            DoubleBuffered = true;
         }
     }
 }
