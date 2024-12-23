@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace mobile1.notice
 {
@@ -21,7 +16,7 @@ namespace mobile1.notice
             {
                 body.Value = TextBox1.Text;
                 title.Value = TextBox2.Text;
-                
+
             }
 
             string no = Request["no"];
@@ -44,14 +39,14 @@ namespace mobile1.notice
                 //title1.Style.Add("display", "none");
                 //bodytext.Style.Add("display", "none");
                 call();
-                
+
             }
 
         }
         string SQL = "";
         protected void call()
         {
-            SQL = "select * from notice where no = "+ Request["no"];
+            SQL = "select * from notice where no = " + Request["no"];
             SqlDataAdapter ADT = new SqlDataAdapter(SQL, DB);
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
@@ -67,13 +62,12 @@ namespace mobile1.notice
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
+
             string name = "";
             string SQL = "select * from user_ba where id = '" + Request.Cookies["ID"].Value + "'";
             SqlDataAdapter ADT = new SqlDataAdapter(SQL, DB);
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
-            string pwd = "";
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
                 name = row["name"].ToString();
@@ -108,10 +102,10 @@ namespace mobile1.notice
                 }
                 else
                 {
-                   
+
                 }
             }
-            else if(HiddenField1.Value.Length == 0)
+            else if (HiddenField1.Value.Length == 0)
             {
                 try
                 {

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -512,13 +510,13 @@ namespace mobile1.Product
         {
             if (Request.QueryString["nowpage"] == null)
             {
-                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value +  "&flag=" + HiddenField2.Value + "&search=" + Request["search"] + "&type=" + Request["type"]);
+                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value + "&search=" + Request["search"] + "&type=" + Request["type"]);
             }
             else
             {
-                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value +  "&flag=" + HiddenField2.Value + "&nowpage=" + Request["nowpage"].ToString() + "&search=" + Request["search"] + "&type=" + Request["type"]);
+                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value + "&nowpage=" + Request["nowpage"].ToString() + "&search=" + Request["search"] + "&type=" + Request["type"]);
             }
-            
+
         }
 
         protected void Unnamed_ServerClick(object sender, EventArgs e)
@@ -624,7 +622,7 @@ namespace mobile1.Product
             }
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
-            
+
 
             System.Web.HttpResponse objResponse = System.Web.HttpContext.Current.Response;
 

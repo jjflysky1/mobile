@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Text;
-using System.Net;
 using System.Diagnostics;
 using System.IO;
-using Newtonsoft.Json;
+using System.Net;
+using System.Text;
+using System.Web.UI.WebControls;
 
 namespace mobile1.notice
 {
@@ -30,7 +25,7 @@ namespace mobile1.notice
         private void PAGEADD(int pagecount, int nowpage)
         {
             StringBuilder SB = new StringBuilder();
-            
+
             SB.Append("<ul class='pagination pagination-sm no-margin'>");
             SB.Append("<li>" + "<a href='notice.aspx?nowpage=" + 1 + "'>" + "<span aria-hidden='true'> &laquo;</span>" + "</a>" + "<li>");
             if (pagecount == 0)
@@ -64,7 +59,7 @@ namespace mobile1.notice
 
             SB.Append("<li>" + "<a href='notice.aspx?nowpage=" + (pagecount - 1) + "'>" + "<span aria-hidden='true'> &raquo;</span>" + "</a>" + "<li>");
             SB.Append("</ul>");
-            
+
 
 
             Label2.Text = SB.ToString();
@@ -208,7 +203,7 @@ namespace mobile1.notice
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
                 TBLADD(row["title"].ToString(), row["body"].ToString(), row["create_date"].ToString(),
-                     row["writer"].ToString(),row["no"].ToString());
+                     row["writer"].ToString(), row["no"].ToString());
 
             }
         }
@@ -240,7 +235,7 @@ namespace mobile1.notice
 
             TD = new TableCell();
             TD.Width = 60;
-            if(body.Length >10)
+            if (body.Length > 10)
             {
                 TD.Text = body.Substring(0, 10) + ".....";
             }
@@ -249,7 +244,7 @@ namespace mobile1.notice
                 TD.Text = body.ToString();
             }
             TD.Attributes["style"] = "text-align : center; vertical-align:middle;cursor:pointer;";
-            TD.Attributes.Add("Onclick", "go('" + no.ToString() + "', '"+ writer.ToString() + "')");
+            TD.Attributes.Add("Onclick", "go('" + no.ToString() + "', '" + writer.ToString() + "')");
             TR.Cells.Add(TD);
 
 
@@ -295,10 +290,10 @@ namespace mobile1.notice
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("notice_writer.aspx?no=" + HiddenField1.Value+ "&writer=" + HiddenField2.Value);
+            Response.Redirect("notice_writer.aspx?no=" + HiddenField1.Value + "&writer=" + HiddenField2.Value);
         }
-        
-      
+
+
         protected void Button4_Click(object sender, EventArgs e)
         {
             WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
@@ -345,7 +340,7 @@ namespace mobile1.notice
         public string SendNotification(string deviceId, string message)
         {
             string SERVER_API_KEY = "AAAAukYEuxs:APA91bERLOVuHKqXeBN-G4wh23FgskupNJDDYxRxgMQA1LfgUx0cN7Z93Yukv3il7Rgfyi7xuvJxl-Bb0AjneX69OMRuqTqm8rUs9P7Pqt0Asmt3S68LjwGfwq5m9E5T7mwzwETIuVAe";
-            
+
             var value = message;
             string resultStr = "";
 

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace mobile1.mail
@@ -19,8 +16,8 @@ namespace mobile1.mail
 
         string attafchfile = "";
         string[] tempfile = { };
-        
-        
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             person();
@@ -59,7 +56,7 @@ namespace mobile1.mail
                     FileUpload1_div.Visible = false;
                 }
             }
-           
+
 
         }
         public void person()
@@ -87,7 +84,7 @@ namespace mobile1.mail
                     DropDownList1.Items.Add(new ListItem(row["name"].ToString() + " " + row["duty_name"].ToString(), row["email"].ToString()));
                 }
             }
-            
+
             //if (DropDownList1.Items.Count < Convert.ToInt32(count))
             //{
             //    DropDownList1.Items.Add(portname.ToString());
@@ -96,7 +93,7 @@ namespace mobile1.mail
         }
         protected void work(object sender, EventArgs e)
         {
-            if(DropDownList1.SelectedValue == "선택")
+            if (DropDownList1.SelectedValue == "선택")
             {
 
             }
@@ -111,12 +108,12 @@ namespace mobile1.mail
                     to.Text += "," + DropDownList1.SelectedValue;
                 }
             }
-           
+
         }
 
         public void get()
         {
-            
+
             string SQL = "select  DATEPART(yy,date) as yy , left(date, 2) as mm, subject,attach,body from email_list where no = '" + Request["no"] + "'";
             SqlDataAdapter ADT = new SqlDataAdapter(SQL, DB);
             DataSet DBSET = new DataSet();
@@ -166,11 +163,11 @@ namespace mobile1.mail
                 {
 
                 }
-               
+
 
                 subject.Text = "FW: " + row["subject"].ToString();
                 to.Text = row["fromadress"].ToString();
-             
+
                 attafchfile = row["attach"].ToString();
                 yy.Value = row["yy"].ToString();
                 mm.Value = row["mm"].ToString();
@@ -185,7 +182,7 @@ namespace mobile1.mail
         }
         public void regetall()
         {
-            
+
             string SQL = "select  DATEPART(yy,date) as  yy , left(date, 2) as  mm, subject,attach,body,fromadress,cc from email_list where no = '" + Request["reall"] + "'";
             SqlDataAdapter ADT = new SqlDataAdapter(SQL, DB);
             DataSet DBSET = new DataSet();
@@ -206,7 +203,7 @@ namespace mobile1.mail
 
                 subject.Text = "FW: " + row["subject"].ToString();
                 to.Text = row["fromadress"].ToString();
-                cc.Text = row["cc"].ToString().Replace("|",",");
+                cc.Text = row["cc"].ToString().Replace("|", ",");
                 attafchfile = row["attach"].ToString();
                 yy.Value = row["yy"].ToString();
                 mm.Value = row["mm"].ToString();
@@ -221,8 +218,8 @@ namespace mobile1.mail
         }
         protected void Button3_Click(object sender, EventArgs e)
         {
-            
-   
+
+
             if (to.Text == "")
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(),
@@ -230,7 +227,7 @@ namespace mobile1.mail
                      "alert('메일주소를 입력해주세요');window.location ='" + HttpContext.Current.Request.Url.AbsoluteUri + "';",
                      true);
                 //Response.Write("<script>alert('메일주소를 입력해주세요');</script>");
-                
+
                 //Response.Redirect(Request.UrlReferrer.ToString());
 
                 //ScriptManager.RegisterStartupScript(this, this.GetType(),
@@ -353,12 +350,12 @@ namespace mobile1.mail
 
                 }
             }
-            catch(Exception E)
+            catch (Exception)
             {
                 Response.Write(e.ToString());
                 Response.End();
             }
-     
+
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)

@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -221,7 +219,7 @@ namespace mobile1.Insa
                 }
                 else
                 {
-                    SB.Append("<li> " + "<a href='Insa_list_personal.aspx?nowpage=" + i + "&no="+ Request["no"] +"'>" + i + "</a>" + " <li>");
+                    SB.Append("<li> " + "<a href='Insa_list_personal.aspx?nowpage=" + i + "&no=" + Request["no"] + "'>" + i + "</a>" + " <li>");
                 }
             }
 
@@ -250,9 +248,9 @@ namespace mobile1.Insa
             {
                 SQL2 = "select count(*) as count from insa_report where left(date,4)  = '" + Request["dropdownlist1"] + "' and  id_no = '" + Request["no"] + "'";
             }
-                
 
-        
+
+
             DB.Close();
             DB.Open();
             SqlCommand comm = new SqlCommand(SQL2, DB);
@@ -296,7 +294,7 @@ namespace mobile1.Insa
                 ADT.SelectCommand.Parameters.AddWithValue("@search", "where left(date,4)  = '" + Request["dropdownlist1"] + "'  and id_no = '" + Request["no"] + "' and a.id_no = b.no order by date desc");
             }
 
-            
+
             ADT.SelectCommand.Parameters.AddWithValue("@where", " tempno >= " + start + " and tempno <= " + end);
             //SqlDataAdapter ADT = new SqlDataAdapter(SQL2, DB);
             DataSet DBSET = new DataSet();
@@ -304,14 +302,10 @@ namespace mobile1.Insa
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
                 TBLADD(row["name"].ToString(), row["duty_name"].ToString(), row["date"].ToString(), row["Q1"].ToString(), row["Q2"].ToString(), row["Q3"].ToString(), row["Q4"].ToString(), row["Q5"].ToString()
-                    , row["total"].ToString(), row["memo"].ToString(), row["id_no"].ToString(),row["month_1"].ToString(), row["month_2"].ToString()
+                    , row["total"].ToString(), row["memo"].ToString(), row["id_no"].ToString(), row["month_1"].ToString(), row["month_2"].ToString()
                     , row["half_1"].ToString(), row["half_2"].ToString(), row["year_1"].ToString(), row["year_2"].ToString());
 
             }
-
-
-            ///년도
-            string month = "";
             string SQL1 = "select distinct left(date,4) as date from insa_report where id_no = '" + Request["no"] + "'  order by date desc";
             SqlDataAdapter ADT1 = new SqlDataAdapter(SQL1, DB);
             DataSet DBSET1 = new DataSet();
@@ -324,13 +318,13 @@ namespace mobile1.Insa
 
         }
         long a = 1;
-        private void TBLADD(string name, string duty_name , string date, string Q1, string Q2, string Q3, string Q4, string Q5, string total, string memo , string id_no,
-            string month_1,string month_2, string half_1 , string half_2, string year_1, string year_2)
+        private void TBLADD(string name, string duty_name, string date, string Q1, string Q2, string Q3, string Q4, string Q5, string total, string memo, string id_no,
+            string month_1, string month_2, string half_1, string half_2, string year_1, string year_2)
         {
             TableRow TR;
             TableCell TD;
 
-            Label1.Text = name.ToString() + " " +duty_name.ToString();
+            Label1.Text = name.ToString() + " " + duty_name.ToString();
 
             TR = new TableRow();
             TR.Font.Size = 10;
@@ -340,12 +334,12 @@ namespace mobile1.Insa
             TD.Width = 10;
             TD.Text = date.ToString();
             TD.Attributes["style"] = "text-align : center; vertical-align:middle; cursor:pointer;";
-            TD.Attributes.Add("Onclick", "go2('" + date.ToString() + "'" + "'" + id_no +"')");
+            TD.Attributes.Add("Onclick", "go2('" + date.ToString() + "'" + "'" + id_no + "')");
             TR.Cells.Add(TD);
 
             TD = new TableCell();
             TD.Width = 20;
-            TD.Text = month_1.ToString() +"만" + " / " + month_2.ToString() + "만";
+            TD.Text = month_1.ToString() + "만" + " / " + month_2.ToString() + "만";
             TD.Attributes["style"] = "text-align : center; vertical-align:middle; cursor:pointer; ";
             TD.Attributes.Add("Onclick", "go2('" + date.ToString() + "', '" + id_no.ToString() + "')");
             TR.Cells.Add(TD);
@@ -409,24 +403,24 @@ namespace mobile1.Insa
 
             TD = new TableCell();
             TD.Width = 10;
-            if(memo.Length < 10)
+            if (memo.Length < 10)
             {
                 TD.Text = memo.ToString();
             }
             else
             {
                 TD.Text = memo.Substring(0, 10) + "....";
-            }    
+            }
             TD.Attributes["style"] = "text-align : center; vertical-align:middle; cursor:pointer;";
             TD.Attributes.Add("Onclick", "go2('" + date.ToString() + "', '" + id_no.ToString() + "')");
             TR.Cells.Add(TD);
 
             a++;
             TBLLIST.Rows.Add(TR);
-            
+
 
         }
-     
+
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -452,14 +446,14 @@ namespace mobile1.Insa
 
         protected void Unnamed_ServerClick(object sender, EventArgs e)
         {
-            Response.Redirect("Insa_list_personal.aspx?no="+ Request["no"]);
+            Response.Redirect("Insa_list_personal.aspx?no=" + Request["no"]);
         }
 
-       
+
 
         protected void Button3_Click1(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void Button1_ServerClick(object sender, EventArgs e)
@@ -502,7 +496,7 @@ namespace mobile1.Insa
                 ADT4.SelectCommand.Parameters.AddWithValue("@search", "where left(date,4)  = '" + year + "'  and id_no = '" + no + "' and a.id_no = b.no order by date desc");
             }
             ADT4.SelectCommand.Parameters.AddWithValue("@where", " tempno >= " + startno + " and tempno <= " + endno);
-            
+
             DataSet DBSET4 = new DataSet();
             ADT4.Fill(DBSET4, "BD4");
             foreach (DataRow row1 in DBSET4.Tables["BD4"].Rows)

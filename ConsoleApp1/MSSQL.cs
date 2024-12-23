@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 
 namespace ConsoleApp1
 {
-    class MSSQL 
+    class MSSQL
     {
         private SqlConnection DB = new SqlConnection("server = 192.168.0.190; uid = nms; pwd = P@ssw0rd; database = mobile;");
         public DataSet select(string SQL)

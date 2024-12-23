@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
 
 namespace mobile1.soap
@@ -92,9 +89,7 @@ namespace mobile1.soap
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
             string productname = "";
-            string serial2 = "";
             string[] data = { };
-            int a = 0;
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
                 productname = row["product"].ToString();
@@ -166,9 +161,7 @@ namespace mobile1.soap
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
             string from_location = "";
-            string serial2 = "";
             string[] data = { };
-            int a = 0;
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
                 from_location = row["from_location"].ToString();
@@ -322,7 +315,7 @@ namespace mobile1.soap
         {
 
             int count = 0;
-            string SQL3 = "select count(*) as count from user_ba where id = '" + id + "' and pwd = '" + pwd +"'";
+            string SQL3 = "select count(*) as count from user_ba where id = '" + id + "' and pwd = '" + pwd + "'";
             SqlDataAdapter ADT3 = new SqlDataAdapter(SQL3, DB);
             DataSet DBSET3 = new DataSet();
             ADT3.Fill(DBSET3, "BD");
@@ -331,7 +324,7 @@ namespace mobile1.soap
                 count = Convert.ToInt32(row["count"]);
             }
 
-            if(count == 1)
+            if (count == 1)
             {
                 return "OK";
             }
@@ -339,7 +332,7 @@ namespace mobile1.soap
             {
                 return "NO";
             }
-            
+
         }
     }
 }

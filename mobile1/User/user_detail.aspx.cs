@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace mobile1.User
 {
@@ -17,7 +11,7 @@ namespace mobile1.User
         DataSet DBSET = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (Request.QueryString["id"] != null)
             {
                 string SQL3 = "select * from user_v where id = '" + Request["id"] + "'";
@@ -30,7 +24,7 @@ namespace mobile1.User
                     Label6.Text = row["name"].ToString();
                     Label7.Text = row["duty_name"].ToString();
                     Label8.Text = row["email"].ToString();
-                    if(row["tel"].ToString() == "")
+                    if (row["tel"].ToString() == "")
                     {
                         Label9.Text = "없음";
                     }
@@ -38,14 +32,14 @@ namespace mobile1.User
                     {
                         Label9.Text = row["tel"].ToString();
                     }
-                    Label10.Text = "<a href='tel:"+ row["phone"].ToString() + "'>" + row["phone"].ToString() + "</a>";
+                    Label10.Text = "<a href='tel:" + row["phone"].ToString() + "'>" + row["phone"].ToString() + "</a>";
                     //Label10.Attributes.Add("Onclick", "go('" + row["email"].ToString() + "')");
                     //Label10.Attributes["style"] = "cursor:pointer;";
                     Label8.Attributes.Add("Onclick", "go('" + row["email"].ToString() + "')");
                     Label8.Attributes["style"] = "cursor:pointer;";
-                    
+
                 }
-                
+
             }
             else
             {

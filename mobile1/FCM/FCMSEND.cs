@@ -1,14 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web;
 
 namespace mobile1.FCM
 {
@@ -19,7 +16,6 @@ namespace mobile1.FCM
         {
 
             string SQL = "select * from device_token";
-            int end = 0;
             SqlDataAdapter ADT = new SqlDataAdapter(SQL, DB);
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
@@ -67,10 +63,10 @@ namespace mobile1.FCM
                 }
 
 
-                
+
             }
 
-            
+
         }
     }
 }

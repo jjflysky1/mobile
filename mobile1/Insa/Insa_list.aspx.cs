@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -185,7 +182,7 @@ namespace mobile1.Insa
             {
                 SQL2 = "select count(*) as count from user_ba ";
             }
-          
+
             DB.Close();
             DB.Open();
             SqlCommand comm = new SqlCommand(SQL2, DB);
@@ -205,7 +202,7 @@ namespace mobile1.Insa
 
 
 
-      
+
 
 
             SqlDataAdapter ADT = new SqlDataAdapter("insa_list_sp", DB);
@@ -219,7 +216,7 @@ namespace mobile1.Insa
             {
                 ADT.SelectCommand.Parameters.AddWithValue("@search", Request.Cookies["ID"].Value);
             }
-            
+
             ADT.SelectCommand.Parameters.AddWithValue("@search", Request.Cookies["ID"].Value);
             ADT.SelectCommand.Parameters.AddWithValue("@where", " where name like '%" + Search.Text + "%'");
 
@@ -287,10 +284,10 @@ namespace mobile1.Insa
 
             a++;
             TBLLIST.Rows.Add(TR);
-            
+
 
         }
-     
+
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -298,14 +295,14 @@ namespace mobile1.Insa
         }
         protected void Button3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("insa_list.aspx?nowpage=" + 1 + "&search=" + Search.Text + "&type=" + DropDownList1.SelectedValue );
+            Response.Redirect("insa_list.aspx?nowpage=" + 1 + "&search=" + Search.Text + "&type=" + DropDownList1.SelectedValue);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             if (Request.QueryString["nowpage"] == null)
             {
-                Response.Redirect("insa_detail.aspx?no="+ HiddenField1.Value);
+                Response.Redirect("insa_detail.aspx?no=" + HiddenField1.Value);
             }
             else
             {
@@ -319,7 +316,7 @@ namespace mobile1.Insa
             Response.Redirect("Sell.aspx");
         }
 
-       
+
 
         protected void Button3_Click1(object sender, EventArgs e)
         {

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace mobile1
@@ -85,7 +80,7 @@ namespace mobile1
             {
                 TBLADD(row["title"].ToString(), row["body"].ToString(), row["create_date"].ToString(),
                      row["writer"].ToString(), row["no"].ToString());
-                
+
             }
         }
         long a = 1;
@@ -98,7 +93,7 @@ namespace mobile1
             TR = new TableRow();
             TR.Font.Size = 10;
             TR.Font.Bold = true;
-            
+
             TD = new TableCell();
             TD.Width = 10;
             TD.Text = a.ToString();
@@ -147,9 +142,9 @@ namespace mobile1
 
             a++;
             TBLLIST.Rows.Add(TR);
-            TBLADD2(body, no , writer);
+            TBLADD2(body, no, writer);
         }
-        private void TBLADD2( string body, string no , string writer)
+        private void TBLADD2(string body, string no, string writer)
         {
             TableRow TR;
             TableCell TD;

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace mobile1.Insa
 {
@@ -20,7 +16,7 @@ namespace mobile1.Insa
             Label3.Text = DateTime.Now.ToString("yyyy년 MM월") + " 인사고과";
             HiddenField2.Value = Request["dropdownlist1"];
             HiddenField3.Value = Request["startdate"];
-            
+
 
             month_1.Value = TextBox1.Text;
             month_2.Value = TextBox2.Text;
@@ -55,7 +51,7 @@ namespace mobile1.Insa
 
 
             string month = "";
-            string SQL1 = "select date, left(CONVERT(varchar(30), GETDATE(),107),2) as month from insa_report where id_no = '"+ Request["no"] +"'  order by date desc";
+            string SQL1 = "select date, left(CONVERT(varchar(30), GETDATE(),107),2) as month from insa_report where id_no = '" + Request["no"] + "'  order by date desc";
             SqlDataAdapter ADT1 = new SqlDataAdapter(SQL1, DB);
             DataSet DBSET1 = new DataSet();
             ADT1.Fill(DBSET1, "BD");
@@ -73,9 +69,9 @@ namespace mobile1.Insa
             }
             else
             {
-                 SQL10 = "select top 3 * from insa_report where id_no = '" + Request["no"] + "' and date <= '" + DateTime.Now.ToString("yyyy년MM월") + "' order by date desc";
+                SQL10 = "select top 3 * from insa_report where id_no = '" + Request["no"] + "' and date <= '" + DateTime.Now.ToString("yyyy년MM월") + "' order by date desc";
             }
-            
+
             SqlDataAdapter ADT10 = new SqlDataAdapter(SQL10, DB);
             DataSet DBSET10 = new DataSet();
             ADT10.Fill(DBSET10, "BD");
@@ -84,7 +80,7 @@ namespace mobile1.Insa
             foreach (DataRow row in DBSET10.Tables["BD"].Rows)
             {
                 //달성율
-                half_2_temp +=  Convert.ToInt32(row["month_2"]);
+                half_2_temp += Convert.ToInt32(row["month_2"]);
                 half_1_temp += Convert.ToInt32(row["month_1"]);
 
             }
@@ -111,11 +107,11 @@ namespace mobile1.Insa
             {
                 //SQL2 = "select * from insa_report where id_no = '" + Request["no"] + "' and left(CONVERT(varchar(30), create_date, 107),2) = '" + DateTime.Now.ToString("MM") + "'";
                 SQL2 = "select * from insa_report where id_no = '" + Request["no"] + "' and date = '" + DateTime.Now.ToString("yyyy년MM월") + "'";
-                
+
             }
             else
             {
-                 SQL2 = "select * from insa_report where id_no = '" + Request["no"] + "' and date = '" + HiddenField2.Value + "'";
+                SQL2 = "select * from insa_report where id_no = '" + Request["no"] + "' and date = '" + HiddenField2.Value + "'";
             }
             SqlDataAdapter ADT2 = new SqlDataAdapter(SQL2, DB);
             DataSet DBSET2 = new DataSet();
@@ -150,11 +146,11 @@ namespace mobile1.Insa
                     //연
                     Label8.Text = "퍼센테이지 : " + ((Convert.ToDouble(year_2_temp) / Convert.ToDouble(year_1_temp)) * 100).ToString("#.##") + "%";
 
-                    if(a >= 95)
+                    if (a >= 95)
                     {
                         RadioButtonList1.SelectedValue = "20";
                     }
-                    else if(a >= 90)
+                    else if (a >= 90)
                     {
                         RadioButtonList1.SelectedValue = "18";
                     }
@@ -195,20 +191,20 @@ namespace mobile1.Insa
                         RadioButtonList1.SelectedValue = "2";
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Response.Write(ex.ToString());
                     Response.End();
                 }
-                    
+
                 Label5.Text = row["TOTAL"].ToString();
-              
+
                 TextBox3.Text = row["memo"].ToString();
 
                 Label3.Text = row["date"].ToString() + " 인사고과";
             }
-        
-          
+
+
 
 
 
@@ -218,17 +214,17 @@ namespace mobile1.Insa
             ADT3.Fill(DBSET, "BD");
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
-   
+
                 Label2.Text = row["name"].ToString();
                 Label1.Text = row["dept_name"].ToString();
                 Label4.Text = row["duty_name"].ToString();
             }
 
-            if(Label5.Text == "")
+            if (Label5.Text == "")
             {
                 theDiv.Visible = false;
             }
-            
+
         }
         protected void work(object sender, EventArgs e)
         {
@@ -256,9 +252,9 @@ namespace mobile1.Insa
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
 
-          
-                Response.Redirect("insa_list.aspx");
-          
+
+            Response.Redirect("insa_list.aspx");
+
         }
 
         protected void Button1_Click1(object sender, EventArgs e)
@@ -311,8 +307,8 @@ namespace mobile1.Insa
                 {
                     RadioButtonList1.SelectedValue = "2";
                 }
-           
-                
+
+
 
 
                 string date = "";
@@ -325,7 +321,7 @@ namespace mobile1.Insa
                     date = DateTime.Now.ToString("yyyy년MM월");
                 }
                 int count = 0;
-                string SQL1 = "select count(*) as count from insa_report where id_no = '" + Request["no"] + "' and date = '"+ date +"'";
+                string SQL1 = "select count(*) as count from insa_report where id_no = '" + Request["no"] + "' and date = '" + date + "'";
                 SqlDataAdapter ADT1 = new SqlDataAdapter(SQL1, DB);
                 DataSet DBSET1 = new DataSet();
                 ADT1.Fill(DBSET1, "BD");
@@ -334,7 +330,7 @@ namespace mobile1.Insa
                     count = Convert.ToInt32(row["count"]);
                 }
 
-                if(count == 0)
+                if (count == 0)
                 {
                     DB.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -398,7 +394,7 @@ namespace mobile1.Insa
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(),
                      "alert",
-                     "alert('등록 되었습니다.');window.location ='insa_detail.aspx?no=" + Request["no"] + "&dropdownlist1="+ date +"';",
+                     "alert('등록 되었습니다.');window.location ='insa_detail.aspx?no=" + Request["no"] + "&dropdownlist1=" + date + "';",
                      true);
                 }
                 else
@@ -429,7 +425,7 @@ namespace mobile1.Insa
                     if (RadioButtonList1.SelectedItem != null)
                     {
                         //a1 = RadioButtonList1.SelectedValue;
-                      
+
                     }
                     if (RadioButtonList2.SelectedItem != null)
                     {
@@ -472,11 +468,11 @@ namespace mobile1.Insa
                 }
 
 
-                    
-                    //Response.Redirect("myinfo.aspx");
-             
+
+                //Response.Redirect("myinfo.aspx");
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //if (RadioButtonList1.SelectedItem == null)
                 //{
@@ -541,6 +537,6 @@ namespace mobile1.Insa
         //    Response.Redirect("insa_detail.aspx?no=" + Request["no"]);
         //}
 
-     
+
     }
 }

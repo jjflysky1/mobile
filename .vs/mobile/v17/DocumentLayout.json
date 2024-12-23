@@ -1,0 +1,145 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\c#\\repos\\mobile\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|D:\\c#\\repos\\mobile\\insert\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|solutionrelative:insert\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|d:\\c#\\repos\\mobile\\insert\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|solutionrelative:insert\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|insert||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|D:\\c#\\repos\\mobile\\insert\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|solutionrelative:insert\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|D:\\c#\\repos\\mobile\\insert\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|solutionrelative:insert\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|D:\\c#\\repos\\mobile\\insert\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|solutionrelative:insert\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|D:\\c#\\repos\\mobile\\insert\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|solutionrelative:insert\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|D:\\c#\\repos\\mobile\\insert\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC2677D-D810-47FE-8205-692173C02184}|insert\\insert.csproj|solutionrelative:insert\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\Form3.cs",
+              "RelativeDocumentMoniker": "insert\\Form3.cs",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\Form3.cs",
+              "RelativeToolTip": "insert\\Form3.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAcwBQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T00:37:46.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form4.cs",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\Form4.cs",
+              "RelativeDocumentMoniker": "insert\\Form4.cs",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\Form4.cs",
+              "RelativeToolTip": "insert\\Form4.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAwBwAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T00:37:30.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\Program.cs",
+              "RelativeDocumentMoniker": "insert\\Program.cs",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\Program.cs",
+              "RelativeToolTip": "insert\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T00:36:39.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form3.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\Form3.cs",
+              "RelativeDocumentMoniker": "insert\\Form3.cs",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\Form3.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "insert\\Form3.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T00:35:35.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form4.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\Form4.cs",
+              "RelativeDocumentMoniker": "insert\\Form4.cs",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\Form4.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "insert\\Form4.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T00:34:59.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "insert",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\insert.csproj",
+              "RelativeDocumentMoniker": "insert\\insert.csproj",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\insert.csproj",
+              "RelativeToolTip": "insert\\insert.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T03:44:22.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\Form1.cs",
+              "RelativeDocumentMoniker": "insert\\Form1.cs",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\Form1.cs",
+              "RelativeToolTip": "insert\\Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJoBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T03:27:55.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "D:\\c#\\repos\\mobile\\insert\\Form1.cs",
+              "RelativeDocumentMoniker": "insert\\Form1.cs",
+              "ToolTip": "D:\\c#\\repos\\mobile\\insert\\Form1.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "insert\\Form1.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T07:25:51.954Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

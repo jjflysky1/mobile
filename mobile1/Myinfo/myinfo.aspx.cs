@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -16,7 +13,7 @@ namespace mobile1.Myinfo
         DataSet DBSET = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
 
             if (IsPostBack == true)
             {
@@ -30,54 +27,54 @@ namespace mobile1.Myinfo
             }
 
 
-                string SQL2 = "select * from dept_ba order by dept_code asc";
-                SqlDataAdapter ADT2 = new SqlDataAdapter(SQL2, DB);
-                DataSet DBSET2 = new DataSet();
-                ADT2.Fill(DBSET2, "BD");
-                foreach (DataRow row in DBSET2.Tables["BD"].Rows)
+            string SQL2 = "select * from dept_ba order by dept_code asc";
+            SqlDataAdapter ADT2 = new SqlDataAdapter(SQL2, DB);
+            DataSet DBSET2 = new DataSet();
+            ADT2.Fill(DBSET2, "BD");
+            foreach (DataRow row in DBSET2.Tables["BD"].Rows)
+            {
+                DropDownList1.Items.Add(new ListItem(row["dept_name"].ToString(), row["dept_code"].ToString()));
+            }
+            // DropDownList1.SelectedIndexChanged += work;
+
+            string SQL1 = "select * from duty_ba  order by duty_code asc";
+            SqlDataAdapter ADT1 = new SqlDataAdapter(SQL1, DB);
+            DataSet DBSET1 = new DataSet();
+            ADT1.Fill(DBSET1, "BD");
+            foreach (DataRow row in DBSET1.Tables["BD"].Rows)
+            {
+
+                DropDownList2.Items.Add(new ListItem(row["duty_name"].ToString(), row["duty_code"].ToString()));
+
+            }
+            // DropDownList2.SelectedIndexChanged += work2;
+
+
+            string SQL3 = "select a.* , b.*, c.* from user_ba a, dept_ba b , duty_ba c where a.id = '" + Request.Cookies["ID"].Value + "'" +
+            " and a.dept_code = b.dept_code and a.duty = c.duty_code";
+            SqlDataAdapter ADT3 = new SqlDataAdapter(SQL3, DB);
+            ADT3.Fill(DBSET, "BD");
+            foreach (DataRow row in DBSET.Tables["BD"].Rows)
+            {
+                TextBox1.Text = row["id"].ToString();
+                //TextBox7.Text = row["pwd"].ToString();
+                TextBox2.Text = row["name"].ToString();
+                TextBox3.Text = row["email"].ToString();
+                //TextBox4.Text = row["duty_name"].ToString();
+                //TextBox5.Text = row["dept_name"].ToString();
+                if (row["phone"].ToString() == "")
                 {
-                      DropDownList1.Items.Add(new ListItem(row["dept_name"].ToString(), row["dept_code"].ToString()));
+                    TextBox6.Text = "없음";
                 }
-               // DropDownList1.SelectedIndexChanged += work;
-
-                string SQL1 = "select * from duty_ba  order by duty_code asc";
-                SqlDataAdapter ADT1 = new SqlDataAdapter(SQL1, DB);
-                DataSet DBSET1 = new DataSet();
-                ADT1.Fill(DBSET1, "BD");
-                foreach (DataRow row in DBSET1.Tables["BD"].Rows)
+                else
                 {
-                    
-                      DropDownList2.Items.Add(new ListItem(row["duty_name"].ToString(), row["duty_code"].ToString()));
-
+                    TextBox6.Text = row["phone"].ToString();
                 }
-                 // DropDownList2.SelectedIndexChanged += work2;
-
-
-                string SQL3 = "select a.* , b.*, c.* from user_ba a, dept_ba b , duty_ba c where a.id = '" + Request.Cookies["ID"].Value + "'" +
-                " and a.dept_code = b.dept_code and a.duty = c.duty_code";
-                SqlDataAdapter ADT3 = new SqlDataAdapter(SQL3, DB);
-                ADT3.Fill(DBSET, "BD");
-                foreach (DataRow row in DBSET.Tables["BD"].Rows)
-                {
-                    TextBox1.Text = row["id"].ToString();
-                    //TextBox7.Text = row["pwd"].ToString();
-                    TextBox2.Text = row["name"].ToString();
-                    TextBox3.Text = row["email"].ToString();
-                    //TextBox4.Text = row["duty_name"].ToString();
-                    //TextBox5.Text = row["dept_name"].ToString();
-                    if (row["phone"].ToString() == "")
-                    {
-                        TextBox6.Text = "없음";
-                    }
-                    else
-                    {
-                        TextBox6.Text = row["phone"].ToString();
-                    }
-                    DropDownList1.SelectedValue = row["dept_code"].ToString();
-                    DropDownList2.SelectedValue = row["duty_code"].ToString();
-                }
+                DropDownList1.SelectedValue = row["dept_code"].ToString();
+                DropDownList2.SelectedValue = row["duty_code"].ToString();
+            }
         }
-       
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("../mail/mail_write.aspx?email=" + HiddenField1.Value);
@@ -104,8 +101,8 @@ namespace mobile1.Myinfo
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            
-           try
+
+            try
             {
                 if (TextBox7.Text.Length > 1)
                 {
@@ -159,12 +156,12 @@ namespace mobile1.Myinfo
             {
 
             }
-                
-         
 
-                //Response.Redirect("myinfo.aspx");
-           
-         
+
+
+            //Response.Redirect("myinfo.aspx");
+
+
         }
     }
 }

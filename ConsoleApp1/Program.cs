@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net.Mail;
-using SmtPop;
-using System.Globalization;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace ConsoleApp1
 {
     class Program : MSSQL
     {
-        
+
         class program
         {
             public string name;
@@ -55,7 +47,7 @@ namespace ConsoleApp1
 
 
 
-    
+
 
 
         static void Main(string[] args)
@@ -68,7 +60,7 @@ namespace ConsoleApp1
 
 
 
-            
+
 
             Weapon p = new Weapon();
             p.Move();
@@ -119,7 +111,7 @@ namespace ConsoleApp1
 
             return p.Name;
         }
-    
+
 
 
 

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -194,7 +192,7 @@ namespace mobile1.Product
         {
 
 
-          
+
 
 
             int nowpage = Convert.ToInt32(Request["nowpage"]);
@@ -352,14 +350,14 @@ namespace mobile1.Product
             endno.Value = end.ToString();
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
-            foreach (DataRow row in DBSET.Tables["BD"].Rows) 
+            foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
                 TBLADD(row["product"].ToString(), row["serial"].ToString(), row["indate"].ToString(),
                       row["outdate"].ToString(), row["up_user"].ToString(), row["qty"].ToString(), row["no"].ToString(), row["tempno"].ToString(),
                       row["from_location"].ToString(), row["to_location"].ToString(), row["out_user"].ToString());
 
             }
-          
+
 
         }
         long a = 1;
@@ -509,13 +507,13 @@ namespace mobile1.Product
         {
             if (Request.QueryString["nowpage"] == null)
             {
-                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value +  "&search=" + Request["search"] + "&type=" + Request["type"]);
+                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value + "&search=" + Request["search"] + "&type=" + Request["type"]);
             }
             else
             {
-                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value +  "&nowpage=" + Request["nowpage"].ToString() + "&search=" + Request["search"] + "&type=" + Request["type"]);
+                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value + "&nowpage=" + Request["nowpage"].ToString() + "&search=" + Request["search"] + "&type=" + Request["type"]);
             }
-                
+
         }
 
         protected void Unnamed_ServerClick(object sender, EventArgs e)

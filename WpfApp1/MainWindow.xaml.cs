@@ -1,21 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity.Core.Objects;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.Common;
 
 namespace WpfApp1
 {
@@ -132,7 +124,7 @@ namespace WpfApp1
                 binding.StringFormat = "yyyy-MM-dd hh:mm";
             }
 
-            if(e.PropertyName == "oudate")
+            if (e.PropertyName == "oudate")
             {
                 this.datagrid1.Background = new System.Windows.Media.SolidColorBrush(Colors.BlueViolet);
             }
@@ -191,17 +183,17 @@ namespace WpfApp1
                 textbox2.Text = "";
                 textbox3.Text = "";
                 textbox4.Text = "";
-                
+
                 this.datagrid1.Background = new System.Windows.Media.SolidColorBrush(Colors.White);
 
                 datagrid1.Items.Refresh();
 
             }
-            catch(Exception E)
+            catch (Exception E)
             {
                 MessageBox.Show(E.Message);
             }
-            
+
         }
     }
 }

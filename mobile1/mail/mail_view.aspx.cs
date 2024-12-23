@@ -1,17 +1,7 @@
-﻿using OpenPop.Mime;
-using OpenPop.Pop3;
-using SmtPop;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace mobile1.mail
@@ -24,7 +14,7 @@ namespace mobile1.mail
             try
             {
                 int no = Convert.ToInt32(Request["no"]);
-                if(Request["flag"] == "list_view")
+                if (Request["flag"] == "list_view")
                 {
                     call(no);
                 }
@@ -38,25 +28,24 @@ namespace mobile1.mail
                 }
 
 
-                
+
             }
             catch
             {
                 Response.Redirect("/Default.aspx");
             }
-            
-            
+
+
         }
         string SQL = "";
         protected void call(int no)
         {
-            SQL = "select  subject, fromadress,cc,attach,user_id,CONVERT(datetime, date) as date,REPLACE(body, CHAR(13)+CHAR(10), '<br>') AS body , b.serverip  from email_list a , site_config b where no = '" + no +"'";
+            SQL = "select  subject, fromadress,cc,attach,user_id,CONVERT(datetime, date) as date,REPLACE(body, CHAR(13)+CHAR(10), '<br>') AS body , b.serverip  from email_list a , site_config b where no = '" + no + "'";
             SqlDataAdapter ADT = new SqlDataAdapter(SQL, DB);
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
             string attachefile = "";
             string user_id = "";
-            int count = 0;
             string serverip = "";
             DateTime date = DateTime.Now;
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
@@ -70,20 +59,20 @@ namespace mobile1.mail
                 date = Convert.ToDateTime(row["date"].ToString());
                 serverip = row["serverip"].ToString();
                 Label4.Text = row["date"].ToString();
-                
+
             }
             string[] attachefile2 = attachefile.Split('|');
-            
+
             Label[] label = new Label[attachefile2.Length - 1];
-            for (int i = 0; i < attachefile2.Length-1; i++)
+            for (int i = 0; i < attachefile2.Length - 1; i++)
             {
                 label[i] = new Label();
-                label[i].Text ="● " + "<a href='" + "http://"+ serverip +"/Mail_attach/" + user_id + "\\" + date.ToString("yyyy") + "\\" + date.ToString("MM") + "\\" +  attachefile2[i] + "'>" + attachefile2[i].ToString()  + "</a><br>" + "   ";
+                label[i].Text = "● " + "<a href='" + "http://" + serverip + "/Mail_attach/" + user_id + "\\" + date.ToString("yyyy") + "\\" + date.ToString("MM") + "\\" + attachefile2[i] + "'>" + attachefile2[i].ToString() + "</a><br>" + "   ";
                 //label[i].Text = attachefile2[i].ToString() + " | ";
                 div1.Controls.Add(label[i]);
             }
-            
-            
+
+
             //Label4.Text += "<a href='" + "http://192.168.0.190:86/Mail_attach/" + user_id + "\\" + date.ToString("yyyy") + "\\" + date.ToString("MM") + "\\" + attachefile + "'>" + attachefile + "</a>" + "   ";
             //"D:\\mobile\\Mail_attach\\" + user_id + "\\" + date.ToString("yyyy") + "\\" + date.ToString("MM") + "\\";
             DB.Open();
@@ -147,7 +136,6 @@ namespace mobile1.mail
             ADT.Fill(DBSET, "BD");
             string attachefile = "";
             string user_id = "";
-            int count = 0;
             string serverip = "";
             DateTime date = DateTime.Now;
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
@@ -283,9 +271,9 @@ namespace mobile1.mail
             }
 
 
-       
-            
-            
+
+
+
         }
 
         protected void Button6_Click(object sender, EventArgs e)

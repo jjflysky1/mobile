@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace mobile1.User
@@ -37,15 +33,15 @@ namespace mobile1.User
                 PopulateTreeView(Convert.ToInt32(row["dept_code"]), null);
 
             }
-            
-            if(Request.QueryString["dept_code"] != null)
+
+            if (Request.QueryString["dept_code"] != null)
             {
-              
+
                 string SQL3 = "select id,name,dept_code,duty_code,p_dept_code,duty_name from user_v order by duty_code asc ";
                 SqlDataAdapter ADT3 = new SqlDataAdapter(SQL3, DB);
                 ADT3.Fill(DBSET, "BD");
                 int dept_code = Convert.ToInt32(Request["dept_code"]);
-                if(dept_code == 0)
+                if (dept_code == 0)
                 {
                     foreach (DataRow row in DBSET.Tables["BD"].Rows)
                     {
@@ -75,10 +71,10 @@ namespace mobile1.User
 
                     PopulateTreeView2(dept_code, null);
                 }
-                
-              
+
+
             }
-            
+
         }
         private void PopulateTreeView(int parentId, TreeNode treeNode)
         {
@@ -94,7 +90,7 @@ namespace mobile1.User
                     if (parentId == 0)
                     {
                         TreeView1.Nodes.Add(child);
-                        child.NavigateUrl = "user_list.aspx?dept_code="+ child.Value;
+                        child.NavigateUrl = "user_list.aspx?dept_code=" + child.Value;
                         PopulateTreeView(Convert.ToInt32(row["dept_code"]), child);
                     }
                     else
@@ -110,7 +106,7 @@ namespace mobile1.User
             {
 
             }
-          
+
 
 
 
@@ -127,10 +123,10 @@ namespace mobile1.User
                         Text = row1["name"].ToString() + "  " + row1["duty_name"].ToString(),
                         Value = row1["id"].ToString()
                     };
-                        TreeView2.Nodes.Add(child);
-                    
-                        child.NavigateUrl = "user_list.aspx?id=" + child.Value + "&dept_code=" + Request["dept_code"];
-                        PopulateTreeView2(Convert.ToInt32(row1["dept_code"]), child);
+                    TreeView2.Nodes.Add(child);
+
+                    child.NavigateUrl = "user_list.aspx?id=" + child.Value + "&dept_code=" + Request["dept_code"];
+                    PopulateTreeView2(Convert.ToInt32(row1["dept_code"]), child);
                 }
 
             }
@@ -143,21 +139,21 @@ namespace mobile1.User
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-                string SQL3 = "select id,name,dept_code,duty_code,p_dept_code,duty_name from user_v where name like  '%" + Search.Value + "%' order by duty_code asc ";
-                SqlDataAdapter ADT3 = new SqlDataAdapter(SQL3, DB);
-                ADT3.Fill(DBSET, "BD");
-                int dept_code = 0;
-                foreach (DataRow row in DBSET.Tables["BD"].Rows)
+            string SQL3 = "select id,name,dept_code,duty_code,p_dept_code,duty_name from user_v where name like  '%" + Search.Value + "%' order by duty_code asc ";
+            SqlDataAdapter ADT3 = new SqlDataAdapter(SQL3, DB);
+            ADT3.Fill(DBSET, "BD");
+            int dept_code = 0;
+            foreach (DataRow row in DBSET.Tables["BD"].Rows)
+            {
+                TreeNode child = new TreeNode
                 {
-                    TreeNode child = new TreeNode
-                    {
-                        Text = row["name"].ToString() + "  " + row["duty_name"].ToString(),
-                        Value = row["id"].ToString()
-                    };
-                    TreeView2.Nodes.Add(child);
-                    child.NavigateUrl = "user_detail.aspx?id=" + child.Value + "&dept_code=" + Request["dept_code"];
-                    dept_code = Convert.ToInt32(row["dept_code"]);
-                }
+                    Text = row["name"].ToString() + "  " + row["duty_name"].ToString(),
+                    Value = row["id"].ToString()
+                };
+                TreeView2.Nodes.Add(child);
+                child.NavigateUrl = "user_detail.aspx?id=" + child.Value + "&dept_code=" + Request["dept_code"];
+                dept_code = Convert.ToInt32(row["dept_code"]);
+            }
         }
     }
 }

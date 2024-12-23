@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -36,7 +32,7 @@ namespace mobile1.Product
             if (!Page.IsPostBack)
             {
 
-                if(Request["type"] == "3")
+                if (Request["type"] == "3")
                 {
                     Search.Text = Request["search"];
                 }
@@ -44,12 +40,12 @@ namespace mobile1.Product
                 {
                     Search.Text = Server.UrlEncode(Request["search"]);
                 }
-                
+
                 DropDownList1.SelectedValue = Request["type"];
                 startdate.Text = Request["startdate"];
                 enddate.Text = Request["enddate"];
                 HiddenField4.Value = Request["HiddenField4"];
-            
+
                 DropDownList2.SelectedValue = Request["type2"];
                 if (enddate.Text == "")
                 {
@@ -157,7 +153,7 @@ namespace mobile1.Product
             StringBuilder SB = new StringBuilder();
 
             SB.Append("<ul class='pagination pagination-sm no-margin'>");
-            SB.Append("<li>" + "<a href='sell.aspx?nowpage=" + 1 + " &startdate=" + startdate.Text + "&enddate=" + enddate.Text + "&search=" + Request["search"] + "&type=" + Request["type"] + "&insort="+ Request["insort"] +"&outsort="+ Request["outsort"] +"'>" + "<span aria-hidden='true'> &laquo;</span>" + "</a>" + "<li>");
+            SB.Append("<li>" + "<a href='sell.aspx?nowpage=" + 1 + " &startdate=" + startdate.Text + "&enddate=" + enddate.Text + "&search=" + Request["search"] + "&type=" + Request["type"] + "&insort=" + Request["insort"] + "&outsort=" + Request["outsort"] + "'>" + "<span aria-hidden='true'> &laquo;</span>" + "</a>" + "<li>");
             if (pagecount == 0)
             {
                 SB.Append("<li> " + "<a href='sell.aspx?nowpage=" + 1 + " &startdate=" + startdate.Text + "&enddate=" + enddate.Text + "&search=" + Request["search"] + "&type=" + Request["type"] + "&insort=" + Request["insort"] + "&outsort=" + Request["outsort"] + "' >" + 1 + "</a>" + " <li>");
@@ -171,7 +167,7 @@ namespace mobile1.Product
             {
                 nowlist = 1;
             }
-            for (int i = nowlist; i <= pagecount-1; i++)
+            for (int i = nowlist; i <= pagecount - 1; i++)
             {
                 if (nowlist + 6 == i)
                 {
@@ -183,7 +179,7 @@ namespace mobile1.Product
                 }
                 else
                 {
-                    SB.Append("<li> " + "<a href='sell.aspx?nowpage=" + i + " &startdate=" + startdate.Text + "&enddate=" + enddate.Text + "&search=" + Request["search"] + "&type=" + Request["type"] + "&sort="+ Request["sort"] + "&insort=" + Request["insort"] + "&outsort=" + Request["outsort"] + "'>" + i + "</a>" + " <li>");
+                    SB.Append("<li> " + "<a href='sell.aspx?nowpage=" + i + " &startdate=" + startdate.Text + "&enddate=" + enddate.Text + "&search=" + Request["search"] + "&type=" + Request["type"] + "&sort=" + Request["sort"] + "&insort=" + Request["insort"] + "&outsort=" + Request["outsort"] + "'>" + i + "</a>" + " <li>");
                 }
             }
 
@@ -195,7 +191,7 @@ namespace mobile1.Product
             Label2.Text = SB.ToString();
         }
         string SQL = "";
-        
+
         private void TBLLOAD()
         {
             int nowpage = Convert.ToInt32(Request["nowpage"]);
@@ -220,7 +216,7 @@ namespace mobile1.Product
                 SQL2 = "select count(*) as count from Product_sell where serial like '%" + Search.Text + "%' and CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' ";
 
             }
-         
+
             if (Request.QueryString["insort"] == "insort")
             {
                 SQL2 = "select count(*) as count from Product_sell where outdate is null and serial like '%" + Search.Text + "%' and CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' ";
@@ -231,7 +227,7 @@ namespace mobile1.Product
                 SQL2 = "select count(*) as count from Product_sell where outdate is not null and serial like '%" + Search.Text + "%' and CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' ";
 
             }
-         
+
             DB.Close();
             DB.Open();
             SqlCommand comm = new SqlCommand(SQL2, DB);
@@ -320,7 +316,7 @@ namespace mobile1.Product
                     {
                         ADT.SelectCommand.Parameters.AddWithValue("@search", " where  CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by no asc");
                     }
-                    else if(HiddenField4.Value == "0")
+                    else if (HiddenField4.Value == "0")
                     {
                         ADT.SelectCommand.Parameters.AddWithValue("@search", " where  CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by no desc");
                     }
@@ -473,18 +469,18 @@ namespace mobile1.Product
                 }
                 ADT.SelectCommand.Parameters.AddWithValue("@where", " tempno >= " + start + " and tempno <= " + end);
             }
-            else 
+            else
             {
-                if(Request.QueryString["sort"] == "outdate")
+                if (Request.QueryString["sort"] == "outdate")
                 {
-                    if(HiddenField4.Value == "1")
+                    if (HiddenField4.Value == "1")
                     {
                         ADT.SelectCommand.Parameters.AddWithValue("@search", " where  CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by outdate asc");
                     }
                     else
                     {
                         ADT.SelectCommand.Parameters.AddWithValue("@search", " where  CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by outdate desc");
-                        
+
                     }
 
                 }
@@ -498,7 +494,7 @@ namespace mobile1.Product
                     {
                         ADT.SelectCommand.Parameters.AddWithValue("@search", " where  outdate is null and CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by no desc");
                     }
-                        
+
 
                 }
                 else if (Request.QueryString["outsort"] == "outsort")
@@ -511,7 +507,7 @@ namespace mobile1.Product
                     {
                         ADT.SelectCommand.Parameters.AddWithValue("@search", " where  outdate is not null and CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by no desc");
                     }
-         
+
                 }
                 else
                 {
@@ -522,9 +518,9 @@ namespace mobile1.Product
                     else
                     {
                         ADT.SelectCommand.Parameters.AddWithValue("@search", " where  CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by no desc");
-                    }    
+                    }
                 }
-                
+
                 ADT.SelectCommand.Parameters.AddWithValue("@where", " tempno >= " + start + " and tempno <= " + end);
             }
 
@@ -532,24 +528,24 @@ namespace mobile1.Product
 
 
 
-            
-                startno.Value = start.ToString();
-                endno.Value = end.ToString();
-                DataSet DBSET = new DataSet();
-                ADT.Fill(DBSET, "BD");
-                foreach (DataRow row in DBSET.Tables["BD"].Rows)
-                {
-                    TBLADD(row["product"].ToString(), row["serial"].ToString(), row["indate"].ToString(),
-                         row["outdate"].ToString(), row["up_user"].ToString(), row["qty"].ToString(), row["no"].ToString(), row["tempno"].ToString(),
-                         row["from_location"].ToString(), row["to_location"].ToString(), row["out_user"].ToString());
-                }
-            
-            
+
+            startno.Value = start.ToString();
+            endno.Value = end.ToString();
+            DataSet DBSET = new DataSet();
+            ADT.Fill(DBSET, "BD");
+            foreach (DataRow row in DBSET.Tables["BD"].Rows)
+            {
+                TBLADD(row["product"].ToString(), row["serial"].ToString(), row["indate"].ToString(),
+                     row["outdate"].ToString(), row["up_user"].ToString(), row["qty"].ToString(), row["no"].ToString(), row["tempno"].ToString(),
+                     row["from_location"].ToString(), row["to_location"].ToString(), row["out_user"].ToString());
+            }
+
+
 
 
         }
         long a = 1;
-        private void TBLADD(string product, string serial, string indate, string outdate, string up_user , string qty , string no, string tempno, string from_location, string to_location, string out_user)
+        private void TBLADD(string product, string serial, string indate, string outdate, string up_user, string qty, string no, string tempno, string from_location, string to_location, string out_user)
         {
             TableRow TR;
             TableCell TD;
@@ -557,7 +553,7 @@ namespace mobile1.Product
 
             TR = new TableRow();
             TR.Font.Size = 10;
-            
+
 
             TD = new TableCell();
             TD.Width = 10;
@@ -635,7 +631,7 @@ namespace mobile1.Product
                 TD.Attributes["style"] = "text-align : center; vertical-align:middle; cursor:pointer; background-color:lightseagreen; ";
                 TD.Attributes.Add("Onclick", "go2('" + no.ToString() + "', '" + "Sell" + "')");
                 TR.Cells.Add(TD);
-                
+
             }
             else
             {
@@ -658,7 +654,7 @@ namespace mobile1.Product
 
             a++;
             TBLLIST.Rows.Add(TR);
-            TBLADD2(tempno, serial,from_location, to_location, out_user);
+            TBLADD2(tempno, serial, from_location, to_location, out_user);
 
         }
         private void TBLADD2(string tempno, string serial, string from_location, string to_location, string out_user)
@@ -672,7 +668,7 @@ namespace mobile1.Product
             TR.Attributes["class"] = "";
             TR.Attributes["style"] = "display:none;  border:0px;";
 
-       
+
 
             TD = new TableCell();
             TD.Text = "<b>제품번호 :</b> " + serial + "<br>" +
@@ -699,15 +695,15 @@ namespace mobile1.Product
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if(Request.QueryString["nowpage"] == null)
+            if (Request.QueryString["nowpage"] == null)
             {
-                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value+"&search="+ Request["search"]  + "&type="+ Request["type"]);
+                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value + "&search=" + Request["search"] + "&type=" + Request["type"]);
             }
             else
             {
-                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value + "&nowpage=" + Request["nowpage"].ToString()+ "&search=" + Request["search"] + "&type=" + Request["type"]);
+                Response.Redirect("product_detail.aspx?no=" + HiddenField1.Value + "&flag=" + HiddenField2.Value + "&nowpage=" + Request["nowpage"].ToString() + "&search=" + Request["search"] + "&type=" + Request["type"]);
             }
-            
+
         }
 
         protected void Unnamed_ServerClick(object sender, EventArgs e)
@@ -842,7 +838,7 @@ namespace mobile1.Product
                 if (Request.QueryString["sort"] == "outdate")
                 {
                     ADT.SelectCommand.Parameters.AddWithValue("@search", " where  CONVERT(CHAR(10), indate, 23)  between '" + startdate.Text + "' and '" + enddate.Text + "' order by outdate desc");
-                    
+
                 }
                 else if (Request.QueryString["insort"] == "insort")
                 {
@@ -951,7 +947,7 @@ namespace mobile1.Product
             {
                 Response.Redirect("sell.aspx?sort=" + HiddenField1.Value + "&insort=" + Request["insort"] + "&outsort=" + Request["outsort"] + "&HiddenField4=0");
             }
-            
+
         }
 
         protected void Button1_ServerClick(object sender, EventArgs e)
@@ -961,11 +957,11 @@ namespace mobile1.Product
 
         protected void Button5_ServerClick(object sender, EventArgs e)
         {
-          
 
-            Response.Redirect("sell.aspx?nowpage=" + 1 + "&search=" + Search.Text + "&type=" + DropDownList1.SelectedValue + "&type2=" + DropDownList2.SelectedValue 
+
+            Response.Redirect("sell.aspx?nowpage=" + 1 + "&search=" + Search.Text + "&type=" + DropDownList1.SelectedValue + "&type2=" + DropDownList2.SelectedValue
                 + "&insort=insort");
-            
+
         }
 
         protected void Button6_ServerClick(object sender, EventArgs e)

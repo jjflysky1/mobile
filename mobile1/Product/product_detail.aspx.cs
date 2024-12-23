@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace mobile1.Product
 {
@@ -104,7 +101,7 @@ namespace mobile1.Product
                         Label5.Text = row["serial"].ToString();
                         product_code.Text = row["serial"].ToString();
                     }
-                    if(Request.Cookies["ID"].Value == "jjflysky" || Request.Cookies["ID"].Value == "admin" || Request.Cookies["ID"].Value == "kwak0001")
+                    if (Request.Cookies["ID"].Value == "jjflysky" || Request.Cookies["ID"].Value == "admin" || Request.Cookies["ID"].Value == "kwak0001")
                     {
                         serial.Style.Add("display", "none");
                     }
@@ -725,13 +722,13 @@ namespace mobile1.Product
 
             }
 
-            if (Request["flag"] == "Sell" )
+            if (Request["flag"] == "Sell")
             {
                 DB.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = DB;
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "update product_sell set serial = '" + HiddenField6.Value +"', modi_user = '" + name + "' , product = '" + HiddenField4.Value + "', qty = '" + HiddenField3.Value + "', to_location = '" + HiddenField2.Value + "' where no = " + Request["no"];
+                cmd.CommandText = "update product_sell set serial = '" + HiddenField6.Value + "', modi_user = '" + name + "' , product = '" + HiddenField4.Value + "', qty = '" + HiddenField3.Value + "', to_location = '" + HiddenField2.Value + "' where no = " + Request["no"];
                 cmd.ExecuteNonQuery();
                 DB.Close();
                 cmd.Dispose();

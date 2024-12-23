@@ -1,28 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Globalization;
-using OpenPop.Pop3;
-using OpenPop.Mime;
-using SmtPop;
-using System.Text;
-using System.Xml;
-using System.Threading;
-using System.Data.SqlClient;
-using System.Data;
 using System.Configuration;
-using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
 using System.Web.Services;
+using System.Web.UI.WebControls;
 
 namespace mobile1.mail
 {
     public partial class send_mail_list : System.Web.UI.Page
     {
         private SqlConnection DB = new SqlConnection(ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString);
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.Search.Attributes.Add("onkeypress", "button_click(this,'')");
@@ -30,26 +19,26 @@ namespace mobile1.mail
             Search.Value = Request["Search"];
             UISET();
             HiddenField2.Value = Request.Cookies["ID"].Value;
-       
+
 
 
         }
         public class Customer2
         {
             public string id { get; set; }
-           
+
         }
         [WebMethod]
         public static string getlist(string user_id)
         {
-            
+
             SqlConnection DB = new SqlConnection(ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString);
             //SmtPop.POP3Client pop = new SmtPop.POP3Client();
             //pop.Open("gw.sungsimit.co.kr", 110, "jjflysky@sungsimit.co.kr", "dnjsvltm1!");
             //// Get message list from POP server
             //SmtPop.POPMessageId[] messages = pop.GetMailList();
 
-   
+
             string SQL = "select top 1 id from mail_send_list where user_id = '" + user_id + "' order by id desc";
             int end = 0;
             SqlDataAdapter ADT = new SqlDataAdapter(SQL, DB);
@@ -59,20 +48,20 @@ namespace mobile1.mail
             {
                 end = Convert.ToInt32(row["id"]);
             }
-          
-             
-                    
-                //foreach (SmtPop.POPMessageId id in messages.Reverse())
-                //{
-               
-                //}
-            
+
+
+
+            //foreach (SmtPop.POPMessageId id in messages.Reverse())
+            //{
+
+            //}
+
 
             //pop.Quit();
 
             return "1";
 
-         
+
         }
         private void UISET()
         {
@@ -131,7 +120,7 @@ namespace mobile1.mail
         }
         private void PAGEADD(int pagecount, int nowpage)
         {
-            
+
             StringBuilder SB = new StringBuilder();
 
             SB.Append("<ul class='pagination pagination-sm no-margin'>");
@@ -253,22 +242,22 @@ namespace mobile1.mail
             //    ADT.SelectCommand.Parameters.AddWithValue("@where", " tempno >= " + start + " and tempno <= " + end);
             //    ADT.SelectCommand.Parameters.AddWithValue("@user_id", Request.Cookies["ID"].Value);
             //}
-            if(Request.QueryString["search"] != null)
+            if (Request.QueryString["search"] != null)
             {
-                ADT.SelectCommand.Parameters.AddWithValue("@search", "where user_id  = '" + Request.Cookies["ID"].Value + "' and subject like '%"+ Search.Value +"%'");
+                ADT.SelectCommand.Parameters.AddWithValue("@search", "where user_id  = '" + Request.Cookies["ID"].Value + "' and subject like '%" + Search.Value + "%'");
             }
             else
             {
-                ADT.SelectCommand.Parameters.AddWithValue("@search", "where user_id  = '"+ Request.Cookies["ID"].Value +"' and subject like '%" + Search.Value + "%'");
+                ADT.SelectCommand.Parameters.AddWithValue("@search", "where user_id  = '" + Request.Cookies["ID"].Value + "' and subject like '%" + Search.Value + "%'");
             }
-            
+
             ADT.SelectCommand.Parameters.AddWithValue("@where", " tempno >= " + start + " and tempno <= " + end);
             ADT.SelectCommand.Parameters.AddWithValue("@user_id", Request.Cookies["ID"].Value);
             DataSet DBSET = new DataSet();
             ADT.Fill(DBSET, "BD");
             foreach (DataRow row in DBSET.Tables["BD"].Rows)
             {
-                TBLADD(row["subject"].ToString(), row["to"].ToString(), row["cc"].ToString(), row["no"].ToString() ,row["date"].ToString(),row["attache"].ToString(),row["view_flag"].ToString());
+                TBLADD(row["subject"].ToString(), row["to"].ToString(), row["cc"].ToString(), row["no"].ToString(), row["date"].ToString(), row["attache"].ToString(), row["view_flag"].ToString());
 
             }
 
@@ -282,12 +271,12 @@ namespace mobile1.mail
 
             TR = new TableRow();
             TR.Font.Size = 10;
-            if(Convert.ToInt32(view_flag) == 0)
-            { 
+            if (Convert.ToInt32(view_flag) == 0)
+            {
                 TR.Font.Bold = true;
             }
-           
-            
+
+
             TD = new TableCell();
             TD.Width = 10;
             TD.Text = to.ToString();
@@ -298,7 +287,7 @@ namespace mobile1.mail
 
             TD = new TableCell();
             TD.Width = 60;
-            if(attache.ToString() == "")
+            if (attache.ToString() == "")
             {
 
             }
@@ -321,7 +310,7 @@ namespace mobile1.mail
             {
                 TD.Text = title.ToString();
             }
-            
+
             TD.Attributes["style"] = "text-align : center; vertical-align:middle;cursor:pointer;";
             TD.Attributes.Add("Onclick", "go('" + id + "')");
             TR.Cells.Add(TD);
@@ -342,14 +331,14 @@ namespace mobile1.mail
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-           
+
             if (Request.QueryString["nowpage"] != null)
             {
                 Response.Redirect("mail_view.aspx?no=" + HiddenField1.Value + "&nowpage=" + Request["nowpage"].ToString() + "&flag=send_view");
             }
             else
             {
-            Response.Redirect("mail_view.aspx?no=" + HiddenField1.Value + "&flag=send_view");
+                Response.Redirect("mail_view.aspx?no=" + HiddenField1.Value + "&flag=send_view");
             }
 
 
@@ -370,4 +359,4 @@ namespace mobile1.mail
         }
     }
 }
-    
+

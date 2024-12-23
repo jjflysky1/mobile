@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
+using System.Web;
 
 namespace mobile1
 {
@@ -23,7 +19,7 @@ namespace mobile1
                 if (Request.Cookies["UserId"] != null)        // 쿠키가 있는지 확인해서 있으면 아이디 입력필드에 지정
                 {                                                      // 체크박스는 체크상태로
                     name.Value = Request.Cookies["UserId"].Value;
-                    
+
                     CheckBox1.Checked = true;
                     //password.Focus();
                 }
@@ -38,7 +34,7 @@ namespace mobile1
                 }
 
             }
-            
+
         }
 
 
@@ -71,7 +67,7 @@ namespace mobile1
             Response.Cookies.Add(COOKIE);
             Response.Cookies["ID"].Value = name.Value;
             LOGIN_DB();
-            
+
         }
 
         protected void LOGIN_DB()
@@ -121,12 +117,12 @@ namespace mobile1
                     {
 
                     }
-                    
-                    
+
+
 
 
                     //Label1.Text = "<script>alert('환영합니다.');</script>";
-                    Response.Redirect("main.aspx?id=" + name.Value );
+                    Response.Redirect("main.aspx?id=" + name.Value);
                 }
                 else
                 {
